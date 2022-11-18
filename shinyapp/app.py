@@ -122,7 +122,7 @@ def server(input, output, session):
                 text=fetcher.wiki_fetcher(url)
                 return "Summary : \n\n"+summarizer.get_summary(text)
             except Exception as e:
-                return e
+                return "No Internet Connection..."
 
         elif input.type() == "URL":
             try:
