@@ -9,15 +9,14 @@ app_ui = ui.page_fluid(
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
             body {
                 box-sizing: border-box;
-                box-shadow: rgba(118,224,127,1) 0px 22px 50px 4px;
                 border-radius: 35px;
+                box-shadow: rgba(247, 49, 244, 0.8) -20px -20px 100px -20px, rgba(0, 0, 0, 0.7) 0px 30px 60px -30px, rgba(247, 49, 244, 0.6) 0px -2px 6px 0px inset;
                 margin-top: 7%;
                 margin-left: 12%;
                 margin-right: 12%;
                 margin-bottom: 7%;
                 padding: 70px;
                 font-family: 'Poppins', sans-serif;
-                background-color: #10002E;
                 background-image: linear-gradient(120deg, #020024 35%, #090979 70%, #0707b5 90%);
                 color: #fff;
                 width: 75%;
@@ -40,7 +39,7 @@ app_ui = ui.page_fluid(
     ),
     ui.div(
         {"style":"align-text:center;font-family:'Gill Sans', sans-serif;margin-top:15%"},
-        ui.h4("How to use our Summary Extractor ?"),
+        ui.h4("Steps to use our Summary Extractor Tool"),
         ui.h6("1. Select the type of input you want to give."),
         ui.h6("2. Enter the input in the given field."),
     ),
@@ -57,19 +56,19 @@ def server(input, output, session):
     def dyn_ui():
         if input.type() == "Term Search":
             return ui.TagList(
-                ui.input_text("x", "Query", placeholder="Search",width='700px'),
+                ui.input_text("x", "Query", placeholder="Search",width='50%'),
                 ui.output_text("txt"),
             )
 
         elif input.type() == "URL":
             return ui.TagList(
-                ui.input_text("x", "URL", placeholder="Paste URL",width='700px'),
+                ui.input_text("x", "URL", placeholder="Paste URL",width='50%'),
                 ui.output_text("txt"),
             )
 
         elif input.type() == "Text":
             return ui.TagList(
-                ui.input_text_area("x", "Text", placeholder="Paste Text", width='1200px', height='500px'),
+                ui.input_text_area("x", "Text", placeholder="Paste Text", width='1000px', height='500px'),
                 ui.output_text("txt"),
         )
 

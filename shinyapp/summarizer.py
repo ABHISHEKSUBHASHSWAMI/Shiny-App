@@ -58,8 +58,8 @@ def get_summary(text):
         # Delete all newline characters from string
         summary = re.sub(pattern, '', summary )
         return summary
-    elif (text=="Waiting for url..."):
-        return text
+    elif (text=="Waiting for url..." or "" or " "):
+        return "Nothing Found !"
     else:
         return text
 def get_word_frequency(article,stop_words):
